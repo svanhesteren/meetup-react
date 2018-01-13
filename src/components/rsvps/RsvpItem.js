@@ -10,7 +10,6 @@ import PropTypes from 'prop-types'
 
 class RsvpItem extends PureComponent {
 	static propTypes = {
-		// ...rsvpShape.isRequired
 		rsvp: PropTypes.shape({
 			event: PropTypes.shape({ eventName: PropTypes.string.isRequired }).isRequired,
 			member: PropTypes.shape({ memberName: PropTypes.string.isRequired, photo: PropTypes.string }).isRequired
@@ -20,7 +19,7 @@ class RsvpItem extends PureComponent {
 	render() {
 		const {member, event} = this.props.rsvp
 		return (
-			<div className="rsvp-item" style={{backgroundColor: 'grey'}}>
+			<div className="rsvp-item" style={{backgroundColor: 'grey', margin: 10, padding: 5}}>
 				<img src={member.photo} alt="my scary pic"/>
 				<h4>{ event.event_name }</h4>
 
@@ -29,5 +28,8 @@ class RsvpItem extends PureComponent {
 		)
 	}
 }
+
+
+
 
 export default RsvpItem
